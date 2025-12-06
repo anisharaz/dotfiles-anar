@@ -1,0 +1,10 @@
+[user]
+	name = Anish Araz
+	email = anisharaz919@gmail.com
+	signingkey = /home/anish/.ssh/github-pri.pem
+[gpg]
+	format = ssh
+[commit]
+	gpgsign = true
+[core]
+	editor = code --wait
