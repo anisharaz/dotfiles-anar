@@ -12,7 +12,6 @@ alias dev="cd ~/Documents/dev"
 alias test="cd ~/Documents/test"
 alias ex="exit"
 alias dk="docker"
-. "/home/anish/.deno/env"
 alias k='kubectl'
 alias tf='terraform'
 alias y='yazi'
@@ -29,7 +28,6 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 source <(fzf --zsh)
-eval "$(zoxide init zsh)"
 
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/usr/local/bin/google-cloud-sdk/path.zsh.inc' ]; then . '/usr/local/bin/google-cloud-sdk/path.zsh.inc'; fi
@@ -38,11 +36,8 @@ if [ -f '/usr/local/bin/google-cloud-sdk/path.zsh.inc' ]; then . '/usr/local/bin
 if [ -f '/usr/local/bin/google-cloud-sdk/completion.zsh.inc' ]; then . '/usr/local/bin/google-cloud-sdk/completion.zsh.inc'; fi
 complete -C aws_completer aws
 
-# bun completions
-[ -s "/home/anish/.bun/_bun" ] && source "/home/anish/.bun/_bun"
-
 # k3d completions
-source "/home/anish/.zsh/completions/_k3d"
+#source "/home/anish/.zsh/completions/_k3d"
 
 # bun
 export BUN_INSTALL="$HOME/.bun"
