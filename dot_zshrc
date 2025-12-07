@@ -19,7 +19,9 @@ alias py='python3'
 alias c='wl-copy'
 alias p='wl-paste'
 alias i='incus'
+
 # Initialize zsh completions (added by deno install script)
+fpath=(~/.zsh/completions $fpath)
 autoload -Uz compinit
 compinit
 
