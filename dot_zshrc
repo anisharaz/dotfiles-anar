@@ -16,7 +16,7 @@ autoload -Uz compinit
 compinit
 
 ZSH_THEME="robbyrussell"
-plugins=(dirhistory git zsh-autosuggestions zsh-syntax-highlighting fzf-tab)
+plugins=(dirhistory git zsh-autosuggestions zsh-syntax-highlighting fzf-tab nix-shell nix-zsh-completions)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -39,7 +39,7 @@ export NVM_DIR="$HOME/.nvm"
 
 # fzf for search history, file search etc..
 source <(fzf --zsh)
-
+prompt_nix_shell_setup
 # zoxide 
 eval "$(zoxide init zsh)"
 
@@ -56,5 +56,6 @@ source "/home/anish/.zsh/completions/_k3d"
 # bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
+export PATH="/home/anish/.nix-profile/bin/:$PATH"
 # bun completions
 [ -s "/home/anish/.bun/_bun" ] && source "/home/anish/.bun/_bun"
