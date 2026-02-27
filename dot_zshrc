@@ -50,8 +50,6 @@ if [ -f '/usr/local/bin/google-cloud-sdk/path.zsh.inc' ]; then . '/usr/local/bin
 if [ -f '/usr/local/bin/google-cloud-sdk/completion.zsh.inc' ]; then . '/usr/local/bin/google-cloud-sdk/completion.zsh.inc'; fi
 complete -C aws_completer aws
 
-# k3d completions
-source "/home/anish/.zsh/completions/_k3d"
 
 # bun
 export BUN_INSTALL="$HOME/.bun"
