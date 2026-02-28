@@ -9,7 +9,7 @@ input {
         tap
         dwt
         drag true
-        drag-lock
+        // drag-lock
         natural-scroll
         accel-speed 0.5
     }
@@ -42,7 +42,7 @@ layout {
 
     focus-ring {
         width 1
-        active-color "#7fc8ff"
+        active-color "#417caa"
         inactive-color "#505050"
     }
 
@@ -61,13 +61,6 @@ layout {
         offset x=0 y=5
         color "#0007"
     }
-
-     struts {
-          left -1
-          right -1
-          top -1
-          bottom -1
-     }
 }
 
 
@@ -78,6 +71,12 @@ spawn-at-startup "qs" "-c" "noctalia-shell" "--no-duplicate"
 hotkey-overlay {
     skip-at-startup
 }
+
+workspace "1"
+workspace "2"
+workspace "3"
+workspace "4"
+workspace "5"
 
 prefer-no-csd
 screenshot-path "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
@@ -96,6 +95,11 @@ window-rule {
     open-floating true
 }
 
+window-rule {
+    match app-id=r#"^kitty-floating$"#
+    open-floating true
+}
+
 
 window-rule {
     geometry-corner-radius 5
@@ -105,9 +109,11 @@ window-rule {
 binds {
     Mod+Shift+Slash { show-hotkey-overlay; }
     Mod+Return hotkey-overlay-title="Open a Terminal: kitty" { spawn "kitty"; }
+    Mod+Shift+Return hotkey-overlay-title="Open a Terminal: kitty" { spawn "kitty" "--class" "kitty-floating"; }
     Mod+E hotkey-overlay-title="Open dolphine" { spawn "dolphin"; }
     Super+Alt+L hotkey-overlay-title="Lock the Screen: swaylock" { spawn-sh "qs -c noctalia-shell ipc call lockScreen lock"; }
     Alt+Space { spawn-sh "qs -c noctalia-shell ipc call launcher toggle"; }
+    F9 { spawn-sh "qs -c noctalia-shell ipc call bar toggle"; }
     Mod+v { spawn-sh "qs -c noctalia-shell ipc call launcher clipboard"; }
     // Alt+Space hotkey-overlay-title="Run an Application: rofi" { spawn-sh "/home/anish/.config/rofi/scripts/launcher_t2"; }
 

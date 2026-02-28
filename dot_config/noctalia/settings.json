@@ -156,6 +156,11 @@
                     ]
                 },
                 {
+                    "defaultSettings": {
+                    },
+                    "id": "plugin:kde-connect"
+                },
+                {
                     "hideWhenZero": false,
                     "hideWhenZeroUnread": false,
                     "iconColor": "none",
@@ -185,6 +190,31 @@
                     "iconColor": "none",
                     "id": "Brightness",
                     "textColor": "none"
+                },
+                {
+                    "defaultSettings": {
+                        "completedCount": 0,
+                        "count": 0,
+                        "current_page_id": 0,
+                        "isExpanded": false,
+                        "pages": [
+                            {
+                                "id": 0,
+                                "name": "General"
+                            }
+                        ],
+                        "priorityColors": {
+                            "high": "#f44336",
+                            "low": "#9e9e9e",
+                            "medium": "#2196f3"
+                        },
+                        "showBackground": true,
+                        "showCompleted": true,
+                        "todos": [
+                        ],
+                        "useCustomColors": false
+                    },
+                    "id": "plugin:todo"
                 },
                 {
                     "colorizeDistroLogo": false,
@@ -326,6 +356,8 @@
         ],
         "onlySameOutput": true,
         "pinnedApps": [
+            "google-chrome",
+            "org.kde.dolphin"
         ],
         "pinnedStatic": false,
         "position": "bottom",
