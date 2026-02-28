@@ -207,12 +207,12 @@ layout {
     // Left and right struts will cause the next window to the side to always be visible.
     // Top and bottom struts will simply add outer gaps in addition to the area occupied by
     // layer-shell panels and regular gaps.
-    struts {
-        // left 64
-        // right 64
-        // top 64
-        // bottom 64
-    }
+     struts {
+          left -1
+          right -1
+          top -1
+          bottom -1
+     }
 }
 
 // Add lines like this to spawn processes at startup.
@@ -229,7 +229,7 @@ spawn-at-startup "qs" "-c" "noctalia-shell" "--no-duplicate"
 
 hotkey-overlay {
     // Uncomment this line to disable the "Important Hotkeys" pop-up at startup.
-    // skip-at-startup
+    skip-at-startup
 }
 
 // Uncomment this line to ask the clients to omit their client-side decorations if possible.
@@ -354,7 +354,7 @@ binds {
     // or do a four-finger swipe up on a touchpad.
     Mod+g repeat=false { toggle-overview; }
 
-    Mod+Q repeat=false { close-window; }
+    Mod+C repeat=false { close-window; }
 
     Mod+Left  { focus-column-left; }
     Mod+Down  { focus-window-down; }
@@ -518,7 +518,7 @@ binds {
     // Makes the column "fill the rest of the space".
     Mod+Ctrl+F { expand-column-to-available-width; }
 
-    Mod+C { center-column; }
+    // Mod+C { center-column; }
 
     // Center all fully visible columns on screen.
     Mod+Ctrl+C { center-visible-columns; }
@@ -587,4 +587,22 @@ debug {
 layer-rule {
   match namespace="^noctalia-overview*"
   place-within-backdrop true
+}
+
+// Make workspaces four times smaller than normal in the overview.
+overview {
+    zoom 0.25
+}
+
+cursor {
+    xcursor-theme "breeze_cursors"
+    xcursor-size 24
+}
+
+environment {
+    // Set a variable like this:
+    // QT_QPA_PLATFORM "wayland"
+    QT_QPA_PLATFORMTHEME "qt6ct"
+    // Remove a variable by using null as the value:
+    // DISPLAY null
 }
