@@ -5,6 +5,9 @@ input {
         numlock
     }
 
+    // focus-follows-mouse
+    warp-mouse-to-focus mode="center-xy"
+
     touchpad {
         tap
         dwt
@@ -30,12 +33,12 @@ output "eDP-1" {
 }
 
 layout {
-    gaps 3
+    gaps 10
     center-focused-column "never"
     preset-column-widths {
-        proportion 0.33333
+        // proportion 0.33333
         proportion 0.5
-        proportion 0.66667
+        // proportion 0.66667
     }
 
     default-column-width {}
@@ -46,20 +49,20 @@ layout {
         inactive-color "#505050"
     }
 
-    border {
-        off
-        width 4
-        active-color "#ffc87f"
-        inactive-color "#505050"
-        urgent-color "#9b0000"
-    }
+    // border {
+    //     off
+    //     width 4
+    //     active-color "#ffc87f"
+    //     inactive-color "#505050"
+    //     urgent-color "#9b0000"
+    // }
 
     shadow {
         on
-        softness 30
-        spread 5
+        softness 20
+        spread 2
         offset x=0 y=5
-        color "#0007"
+        color "rgba(41, 41, 41, 0.47)"
     }
 }
 
@@ -96,25 +99,26 @@ window-rule {
 }
 
 window-rule {
-    match app-id=r#"^kitty-floating$"#
+    match app-id=r#"^konsole-floating$"#
     open-floating true
 }
 
 
 window-rule {
-    geometry-corner-radius 5
+    geometry-corner-radius 15
     clip-to-geometry true
 }
 
 binds {
     Mod+Shift+Slash { show-hotkey-overlay; }
-    Mod+Return hotkey-overlay-title="Open a Terminal: kitty" { spawn "kitty"; }
-    Mod+Shift+Return hotkey-overlay-title="Open a Terminal: kitty" { spawn "kitty" "--class" "kitty-floating"; }
+    Mod+Return hotkey-overlay-title="Open a Terminal: konsole" { spawn "konsole"; }
+    Mod+Shift+Return hotkey-overlay-title="Open a Terminal: konsole-floating" { spawn "konsole" "--title" "konsole-floating"; }
     Mod+E hotkey-overlay-title="Open dolphine" { spawn "dolphin"; }
     Super+Alt+L hotkey-overlay-title="Lock the Screen: swaylock" { spawn-sh "qs -c noctalia-shell ipc call lockScreen lock"; }
     Alt+Space { spawn-sh "qs -c noctalia-shell ipc call launcher toggle"; }
     F9 { spawn-sh "qs -c noctalia-shell ipc call bar toggle"; }
     Mod+v { spawn-sh "qs -c noctalia-shell ipc call launcher clipboard"; }
+    Ctrl+Alt+Space { spawn-sh "qs -c noctalia-shell ipc call launcher windows"; }
     // Alt+Space hotkey-overlay-title="Run an Application: rofi" { spawn-sh "/home/anish/.config/rofi/scripts/launcher_t2"; }
 
 
@@ -316,6 +320,8 @@ cursor {
 
 environment {
     QT_QPA_PLATFORMTHEME "qt6ct"
+    XDG_CURRENT_DESKTOP "gtk"
     // Remove a variable by using null as the value: 
     // DISPLAY null
 }
+
