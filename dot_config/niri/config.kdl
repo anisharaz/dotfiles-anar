@@ -94,6 +94,11 @@ window-rule {
 }
 
 window-rule {
+    match app-id="nwg-look"
+    open-floating true
+}
+
+window-rule {
     match app-id=r#"org\.kde\.dolphin$"#
     open-floating true
 }
