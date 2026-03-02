@@ -116,12 +116,15 @@
                 {
                     "colorizeIcons": false,
                     "hideMode": "hidden",
-                    "id": "ActiveWindow",
-                    "maxWidth": 145,
-                    "scrollingMode": "hover",
-                    "showIcon": true,
-                    "textColor": "none",
-                    "useFixedWidth": false
+                    "iconScale": 0.9,
+                    "id": "Taskbar",
+                    "maxTaskbarWidth": 50,
+                    "onlyActiveWorkspaces": false,
+                    "onlySameOutput": false,
+                    "showPinnedApps": true,
+                    "showTitle": false,
+                    "smartWidth": true,
+                    "titleWidth": 120
                 },
                 {
                     "compactMode": false,
@@ -192,6 +195,13 @@
                     "displayMode": "onhover",
                     "iconColor": "none",
                     "id": "Volume",
+                    "middleClickCommand": "pwvucontrol || pavucontrol",
+                    "textColor": "none"
+                },
+                {
+                    "displayMode": "onhover",
+                    "iconColor": "none",
+                    "id": "Microphone",
                     "middleClickCommand": "pwvucontrol || pavucontrol",
                     "textColor": "none"
                 },
@@ -352,7 +362,6 @@
         "onlySameOutput": true,
         "pinnedApps": [
             "google-chrome",
-            "kitty",
             "org.kde.dolphin"
         ],
         "pinnedStatic": false,
@@ -644,13 +653,13 @@
         "transitionEdgeSmoothness": 0.05,
         "transitionType": "random",
         "useSolidColor": false,
-        "useWallhaven": false,
+        "useWallhaven": true,
         "viewMode": "single",
         "wallhavenApiKey": "",
         "wallhavenCategories": "111",
         "wallhavenOrder": "desc",
         "wallhavenPurity": "100",
-        "wallhavenQuery": "",
+        "wallhavenQuery": "abstract",
         "wallhavenRatios": "",
         "wallhavenResolutionHeight": "",
         "wallhavenResolutionMode": "atleast",

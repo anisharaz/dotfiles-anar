@@ -6,7 +6,7 @@ input {
     }
 
     // focus-follows-mouse
-    warp-mouse-to-focus mode="center-xy"
+    // warp-mouse-to-focus mode="center-xy"
 
     touchpad {
         tap
@@ -99,7 +99,7 @@ window-rule {
 }
 
 window-rule {
-    match app-id=r#"^konsole-floating$"#
+    match app-id=r#"org\.kde\.konsole$"#
     open-floating true
 }
 
@@ -112,7 +112,6 @@ window-rule {
 binds {
     Mod+Shift+Slash { show-hotkey-overlay; }
     Mod+Return hotkey-overlay-title="Open a Terminal: konsole" { spawn "konsole"; }
-    Mod+Shift+Return hotkey-overlay-title="Open a Terminal: konsole-floating" { spawn "konsole" "--title" "konsole-floating"; }
     Mod+E hotkey-overlay-title="Open dolphine" { spawn "dolphin"; }
     Super+Alt+L hotkey-overlay-title="Lock the Screen: swaylock" { spawn-sh "qs -c noctalia-shell ipc call lockScreen lock"; }
     Alt+Space { spawn-sh "qs -c noctalia-shell ipc call launcher toggle"; }
@@ -123,11 +122,12 @@ binds {
 
 
 
-    XF86AudioRaiseVolume allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1+ -l 1.0"; }
-    XF86AudioLowerVolume allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1-"; }
-    XF86AudioMute        allow-when-locked=true { spawn-sh "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"; }
-    XF86AudioMicMute     allow-when-locked=true { spawn-sh "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"; }
-    XF86AudioPlay        allow-when-locked=true { spawn-sh "playerctl play-pause"; }
+    XF86AudioRaiseVolume allow-when-locked=true { spawn-sh "qs -c noctalia-shell ipc call volume increase"; }
+    XF86AudioLowerVolume allow-when-locked=true { spawn-sh "qs -c noctalia-shell ipc call volume decrease"; }
+    XF86AudioMute        allow-when-locked=true { spawn-sh "qs -c noctalia-shell ipc call volume muteOutput"; }
+    XF86AudioMicMute     allow-when-locked=true { spawn-sh "qs -c noctalia-shell ipc call volume muteInput"; }
+    Mod+m     allow-when-locked=true { spawn-sh "qs -c noctalia-shell ipc call volume muteInput"; }
+    XF86AudioPlay        allow-when-locked=true { spawn-sh "qs -c noctalia-shell ipc call media playPause"; }
     XF86AudioStop        allow-when-locked=true { spawn-sh "playerctl stop"; }
     XF86AudioPrev        allow-when-locked=true { spawn-sh "playerctl previous"; }
     XF86AudioNext        allow-when-locked=true { spawn-sh "playerctl next"; }
