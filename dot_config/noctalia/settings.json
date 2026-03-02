@@ -82,7 +82,7 @@
                     "unfocusedIconsOpacity": 1
                 },
                 {
-                    "clockColor": "error",
+                    "clockColor": "none",
                     "customFont": "",
                     "formatHorizontal": "h:mm AP , dddd , MMM dd",
                     "formatVertical": "HH mm - dd MM",
@@ -417,9 +417,9 @@
         "lockScreenMonitors": [
         ],
         "lockScreenTint": 0,
-        "radiusRatio": 0.3,
+        "radiusRatio": 1,
         "reverseScroll": false,
-        "scaleRatio": 1,
+        "scaleRatio": 0.8500000000000001,
         "screenRadiusRatio": 1,
         "shadowDirection": "center",
         "shadowOffsetX": 0,
