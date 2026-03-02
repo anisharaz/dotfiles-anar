@@ -226,12 +226,12 @@
                 },
                 {
                     "deviceNativePath": "__default__",
-                    "displayMode": "graphic-clean",
-                    "hideIfIdle": false,
+                    "displayMode": "graphic",
+                    "hideIfIdle": true,
                     "hideIfNotDetected": true,
                     "id": "Battery",
                     "showNoctaliaPerformance": false,
-                    "showPowerProfiles": false
+                    "showPowerProfiles": true
                 },
                 {
                     "colorizeDistroLogo": false,
@@ -361,6 +361,8 @@
         ],
         "onlySameOutput": true,
         "pinnedApps": [
+            "code",
+            "org.kde.konsole",
             "google-chrome",
             "org.kde.dolphin"
         ],
