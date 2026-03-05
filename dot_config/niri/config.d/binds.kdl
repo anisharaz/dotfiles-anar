@@ -8,7 +8,6 @@ binds {
     Ctrl+Alt+Space { spawn-sh "qs -c noctalia-shell ipc call launcher windows"; }
     Ctrl+Shift+Print { spawn-sh "~/.config/myscripts/screenshot.sh"; }
 
-
     XF86AudioRaiseVolume allow-when-locked=true { spawn-sh "qs -c noctalia-shell ipc call volume increase"; }
     XF86AudioLowerVolume allow-when-locked=true { spawn-sh "qs -c noctalia-shell ipc call volume decrease"; }
     XF86AudioMute        allow-when-locked=true { spawn-sh "qs -c noctalia-shell ipc call volume muteOutput"; }

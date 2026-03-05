@@ -16,6 +16,10 @@
         "ignoreMouseInput": false,
         "overviewLayer": false,
         "pinnedApps": [
+            "google-chrome",
+            "org.kde.dolphin",
+            "org.kde.konsole",
+            "code"
         ],
         "position": "center",
         "screenshotAnnotationTool": "",
@@ -92,6 +96,11 @@
                 }
             ],
             "left": [
+                {
+                    "icon": "rocket",
+                    "iconColor": "primary",
+                    "id": "Launcher"
+                },
                 {
                     "compactMode": false,
                     "diskPath": "/",
@@ -361,10 +370,7 @@
         ],
         "onlySameOutput": true,
         "pinnedApps": [
-            "code",
-            "org.kde.konsole",
-            "google-chrome",
-            "org.kde.dolphin"
+            "google-chrome"
         ],
         "pinnedStatic": false,
         "position": "bottom",
