@@ -1,0 +1,18 @@
+## extra power settings
+## in /etc/systemd/sleep.conf , set AllowSuspendThenHibernate=yes and set HibernateDelaySec=2h
+## in /etc/systemd/logind.conf , set HandlePowerKey=hibernate and HandlePowerKeyLongPress=suspend-then-hibernate
+
+
+# 5 min → Dim brightness and lockScreen
+timeout 300 'brightnessctl -s set 1%;qs -c noctalia-shell ipc call lockScreen lock' resume 'brightnessctl -r'
+
+# 10 min → Turn off display
+timeout 600 'niri msg action power-off-monitors' resume 'niri msg action power-on-monitors'
+
+# 15 min → Lock + suspend-then-hibernate
+timeout 900 'systemctl suspend-then-hibernate'
+
+# Always lock before suspend
+before-sleep 'qs -c noctalia-shell ipc call lockScreen lock'
+
+lock 'qs -c noctalia-shell ipc call lockScreen lock'
