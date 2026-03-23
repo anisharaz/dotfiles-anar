@@ -3,7 +3,7 @@ layout {
     gaps 5
     center-focused-column "never"
     preset-column-widths {
-        // proportion 0.33333
+        proportion 1.0
         proportion 0.5
         // proportion 0.66667
     }
@@ -12,7 +12,7 @@ layout {
 
     focus-ring {
         width 1
-        active-color "#4b98d4"
+        active-color "#219fff"
         inactive-color "#505050"
     }
 
@@ -50,4 +50,5 @@ layout {
         // inactive-gradient from="#505050" to="#808080" angle=45 relative-to="workspace-view"
         // urgent-gradient from="#800" to="#a33" angle=45
     }
+
 }
