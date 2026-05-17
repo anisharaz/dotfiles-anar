@@ -26,16 +26,6 @@ animations {
 }
 
 
-debug {
-  // Allows notification actions and window activation from Noctalia.
-  honor-xdg-activation-with-invalid-serial
-}
-
-layer-rule {
-  match namespace="^noctalia-overview*"
-  place-within-backdrop true
-}
-
 overview {
     zoom 0.25
 }
