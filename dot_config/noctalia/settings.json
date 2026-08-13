@@ -116,16 +116,6 @@
             ],
             "left": [
                 {
-                    "colorizeSystemIcon": "none",
-                    "colorizeSystemText": "none",
-                    "customIconPath": "",
-                    "enableColorization": false,
-                    "icon": "rocket",
-                    "iconColor": "primary",
-                    "id": "Launcher",
-                    "useDistroLogo": false
-                },
-                {
                     "compactMode": false,
                     "diskPath": "/",
                     "iconColor": "none",
@@ -730,13 +720,13 @@
         ],
         "useOriginalImages": false,
         "useSolidColor": false,
-        "useWallhaven": false,
+        "useWallhaven": true,
         "viewMode": "single",
         "wallhavenApiKey": "",
         "wallhavenCategories": "111",
         "wallhavenOrder": "desc",
         "wallhavenPurity": "100",
-        "wallhavenQuery": "goku",
+        "wallhavenQuery": "neon",
         "wallhavenRatios": "",
         "wallhavenResolutionHeight": "",
         "wallhavenResolutionMode": "atleast",

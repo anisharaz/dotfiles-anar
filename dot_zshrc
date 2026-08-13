@@ -50,3 +50,4 @@ export PATH="/home/anish/.nix-profile/bin/:$PATH"
 
 # golang
 export PATH="/home/anish/go/bin:$PATH"
+
