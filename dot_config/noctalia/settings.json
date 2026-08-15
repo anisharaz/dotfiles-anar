@@ -78,17 +78,17 @@
         ],
         "showCapsule": true,
         "showOnWorkspaceSwitch": false,
-        "showOutline": false,
-        "useSeparateOpacity": false,
+        "showOutline": true,
+        "useSeparateOpacity": true,
         "widgetSpacing": 6,
         "widgets": {
             "center": [
                 {
                     "characterCount": 2,
                     "colorizeIcons": false,
-                    "emptyColor": "secondary",
+                    "emptyColor": "none",
                     "enableScrollWheel": true,
-                    "focusedColor": "primary",
+                    "focusedColor": "error",
                     "followFocusedScreen": false,
                     "fontWeight": "bold",
                     "groupedBorderOpacity": 1,
@@ -102,7 +102,7 @@
                     "showApplicationsHover": false,
                     "showBadge": true,
                     "showLabelsOnlyWhenOccupied": true,
-                    "unfocusedIconsOpacity": 0.8
+                    "unfocusedIconsOpacity": 0.5700000000000001
                 },
                 {
                     "clockColor": "none",
@@ -407,7 +407,7 @@
         "clockStyle": "analog",
         "compactLockScreen": true,
         "dimmerOpacity": 0.3,
-        "enableBlurBehind": false,
+        "enableBlurBehind": true,
         "enableLockScreenCountdown": true,
         "enableLockScreenMediaControls": false,
         "enableShadows": false,
