@@ -21,7 +21,7 @@ alias c='wl-copy'
 alias p='wl-paste'
 alias i='incus'
 alias vistas-vscode='code --new-window --user-data-dir "$HOME/.config/anish/vistas-vscode" --extensions-dir "$HOME/.config/anish/vistas-vscode/extensions"'
-
+alias ls="eza --icons=auto"
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
