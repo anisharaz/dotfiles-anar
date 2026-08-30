@@ -22,7 +22,7 @@ window-rule {
 }
 
 window-rule {
-    match app-id=r#"org\.kde\.konsole$"#
+    match app-id=r#"kitty"#
     open-floating true
     default-column-width { fixed 1100; }
     default-window-height { fixed 600; }
