@@ -82,6 +82,7 @@ screen_time_enabled = true
 
     [shell.panel]
     open_near_click_control_center = true
+    transparency_mode = "glass"
 
     [[shell.session.actions]]
     action = "logout"
