@@ -4,6 +4,7 @@ config_version = 13
 enabled = true
 
 [bar.default]
+background_opacity = 0.84999998100101948
 border = "primary"
 border_width = 0.5
 capsule = true
@@ -11,6 +12,7 @@ center = [ "taskbar" ]
 end = [ "tray", "notifications", "network", "bluetooth", "volume", "battery", "control-center" ]
 margin_edge = 4
 margin_ends = 350
+radius = 25
 start = [ "clock", "cpu", "ram", "temp", "media" ]
 
 [control_center]
@@ -72,6 +74,7 @@ widget_order = [ "lockscreen-login-box@eDP-1" ]
 position = "top_right"
 
 [shell]
+font_family = "Adwaita Sans"
 screen_time_enabled = true
 
     [shell.launcher]
