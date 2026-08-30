@@ -4,11 +4,11 @@ config_version = 13
 border = "primary"
 border_width = 0.5
 capsule = true
-center = [ "workspaces", "clock" ]
+center = [ "taskbar" ]
 end = [ "tray", "notifications", "network", "bluetooth", "volume", "battery", "control-center" ]
-margin_edge = 1
+margin_edge = 4
 margin_ends = 350
-start = [ "cpu", "ram", "temp", "media" ]
+start = [ "clock", "cpu", "ram", "temp", "media" ]
 
 [control_center]
 sidebar = "full"
@@ -131,6 +131,26 @@ directory = "/home/anish/Pictures/Wallpapers"
 
     [wallpaper.monitors.eDP-1]
     path = "/home/anish/Pictures/Wallpapers/wallhaven_7pd9l3.jpg"
+
+[widget.clock]
+format = "{:%-I:%M %p}"
+
+[widget.media]
+hide_when_no_media = true
+
+[widget.network]
+show_label = false
+
+[widget.taskbar]
+anchor = true
+capsule = true
+capsule_opacity = 0.0
+capsule_radius = "auto"
+group_by_workspace = true
+inactive_opacity = 0.69999999999999996
+minimal = true
+show_all_outputs = true
+workspace_label_placement = "inside"
 
 [widget.workspaces]
 show_all_outputs = true
