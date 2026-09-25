@@ -1,19 +1,26 @@
-config_version = 13
+config_version = 14
 
 [backdrop]
 enabled = true
 
 [bar.default]
-background_opacity = 0.84999998100101948
 border = "primary"
 border_width = 0.5
 capsule = true
+capsule_thickness = 0.79999998584389687
 center = [ "taskbar" ]
-end = [ "tray", "notifications", "network", "bluetooth", "volume", "battery", "control-center" ]
+concave_edge_corners = false
+end = [ "tray", "media", "notifications", "network", "volume", "battery", "control-center" ]
+font_weight = 400
 margin_edge = 4
-margin_ends = 350
-radius = 25
-start = [ "clock", "cpu", "ram", "temp", "media" ]
+margin_ends = 200
+radius = 20
+shadow = false
+start = [ "launcher", "clock", "cpu", "ram" ]
+thickness = 35
+
+    [bar.default.monitor.DVI-I-1]
+    enabled = false
 
 [control_center]
 sidebar = "full"
@@ -33,15 +40,45 @@ widget_order = []
 auto_hide = true
 layer = "overlay"
 
+[hot_corners.top_right]
+action = "window_switcher"
+
 [lockscreen_widgets]
 enabled = false
 schema_version = 2
-widget_order = [ "lockscreen-login-box@eDP-1" ]
+widget_order = [ "lockscreen-login-box@winit", "lockscreen-login-box@DVI-I-1", "lockscreen-login-box@eDP-1" ]
 
     [lockscreen_widgets.grid]
     cell_size = 16
     major_interval = 4
     visible = true
+
+    [lockscreen_widgets.widget."lockscreen-login-box@DVI-I-1"]
+    box_height = 196.0
+    box_width = 810.0
+    cx = 768.0
+    cy = 741.60003662109375
+    output = "DVI-I-1"
+    placement_height = 960.0
+    placement_width = 1536.0
+    rotation = 0.0
+    type = "login_box"
+
+        [lockscreen_widgets.widget."lockscreen-login-box@DVI-I-1".settings]
+        background_color = "surface_variant"
+        background_opacity = 0.88
+        background_radius = 12.0
+        center_password_text = false
+        input_opacity = 1.0
+        input_radius = 6.0
+        layout = "regular"
+        show_caps_lock = true
+        show_keyboard_layout = true
+        show_login_button = true
+        show_media = true
+        show_session_buttons = true
+        show_unlock_hint = true
+        show_weather = true
 
     [lockscreen_widgets.widget."lockscreen-login-box@eDP-1"]
     box_height = 196.0
@@ -70,15 +107,43 @@ widget_order = [ "lockscreen-login-box@eDP-1" ]
         show_unlock_hint = true
         show_weather = true
 
+    [lockscreen_widgets.widget."lockscreen-login-box@winit"]
+    box_height = 196.0
+    box_width = 810.0
+    cx = 640.0
+    cy = 849.0
+    output = "winit"
+    placement_height = 1031.0
+    placement_width = 1280.0
+    rotation = 0.0
+    type = "login_box"
+
+        [lockscreen_widgets.widget."lockscreen-login-box@winit".settings]
+        background_color = "surface_variant"
+        background_opacity = 0.88
+        background_radius = 12.0
+        center_password_text = false
+        input_opacity = 1.0
+        input_radius = 6.0
+        layout = "regular"
+        show_caps_lock = true
+        show_keyboard_layout = true
+        show_login_button = true
+        show_media = true
+        show_session_buttons = true
+        show_unlock_hint = true
+        show_weather = true
+
 [osd]
 position = "top_right"
 
 [shell]
+avatar_path = "/home/anish/Pictures/Wallpapers/larch.png"
 font_family = "Adwaita Sans"
 screen_time_enabled = true
 
     [shell.launcher]
-    pinned = [ "google-chrome", "org.kde.konsole", "code" ]
+    pinned = [ "google-chrome", "code", "kitty" ]
 
     [shell.panel]
     open_near_click_control_center = true
@@ -121,7 +186,7 @@ screen_time_enabled = true
 
 [theme]
 builtin = "Catppuccin"
-community_palette = "Doomed"
+community_palette = "Aura"
 mode = "dark"
 source = "wallpaper"
 wallpaper_scheme = "m3-content"
@@ -134,32 +199,38 @@ directory = "/home/anish/Pictures/Wallpapers"
 transition_on_startup = true
 
     [wallpaper.default]
-    path = "/home/anish/Pictures/Wallpapers/wallhaven_dgp6vg.jpg"
+    path = "/home/anish/Pictures/Wallpapers/pexels-kaboompics-6406.jpg"
 
     [wallpaper.last]
-    path = "/home/anish/Pictures/Wallpapers/wallhaven_dgp6vg.jpg"
+    path = "/home/anish/Pictures/Wallpapers/pexels-kaboompics-6406.jpg"
 
     [wallpaper.monitors.eDP-1]
-    path = "/home/anish/Pictures/Wallpapers/wallhaven_dgp6vg.jpg"
+    path = "/home/anish/Pictures/Wallpapers/pexels-kaboompics-6406.jpg"
+
+[widget.battery]
+hide_when_full = true
 
 [widget.clock]
 format = "{:%-I:%M %p}"
 
 [widget.media]
 hide_when_no_media = true
+max_length = 100
 
 [widget.network]
 show_label = false
+
+[widget.notifications]
+hide_when_no_unread = true
 
 [widget.taskbar]
 anchor = true
 capsule = true
 capsule_opacity = 0.0
-capsule_radius = "auto"
+capsule_padding = 8
 group_by_workspace = true
-inactive_opacity = 0.69999999999999996
+inactive_opacity = 0.80000000000000004
 minimal = true
-show_all_outputs = true
 workspace_label_placement = "inside"
 
 [widget.workspaces]

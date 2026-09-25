@@ -7,11 +7,23 @@ output "eDP-1" {
     position x=0 y=0
 }
 
-output "HDMI-A-1" {
-    mode "1920x1080@60.000"
-    scale 1
+// The Moreland/evdi virtual tablet display. Mode deliberately omitted --
+// evdi's synthesized EDID always advertises exactly one mode (whatever
+// resolution/fps the daemon was started with, which varies across test
+// runs), so niri just uses whatever that preferred mode is. Scale is 1.25:
+// the tablet panel is physically small, so content at native scale reads
+// tiny up close. Position is what actually matters here: this places it to
+// the left of eDP-1 (1920x1080 at 0,0) so it doesn't overlap, and gives the
+// daemon's own per-session wlr-randr repositioning a correct starting point
+// instead of wherever niri's default new-output placement happens to land.
+// -1536, not -1920: position is logical (post-scale) pixels, and at scale
+// 1.25 a physically-1920px-wide output is only 1920 / 1.25 = 1536 logical
+// px wide -- using the physical width would leave a 384px dead zone
+// between the two outputs.
+output "DVI-I-1" {
+    scale 1.25
     transform "normal"
     background-color "#000000"
     backdrop-color "#000000"
-    position x=-1920 y=0
+    position x=-1536 y=0
 }
