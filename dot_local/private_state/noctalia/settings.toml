@@ -43,13 +43,26 @@ layer = "overlay"
 [hot_corners.top_right]
 action = "window_switcher"
 
+[lockscreen]
+blur_intensity = 0.59999998658895493
+blurred_desktop = true
+tint_intensity = 0.59999998658895493
+transition = [ "honeycomb" ]
+
 [lockscreen_widgets]
-enabled = false
+enabled = true
 schema_version = 2
-widget_order = [ "lockscreen-login-box@winit", "lockscreen-login-box@DVI-I-1", "lockscreen-login-box@eDP-1" ]
+widget_order = [
+    "lockscreen-login-box@winit",
+    "lockscreen-login-box@DVI-I-1",
+    "lockscreen-login-box@eDP-1",
+    "lockscreen-widget-0000000000000001",
+    "lockscreen-widget-0000000000000002",
+    "lockscreen-widget-0000000000000003"
+]
 
     [lockscreen_widgets.grid]
-    cell_size = 16
+    cell_size = 8
     major_interval = 4
     visible = true
 
@@ -134,6 +147,47 @@ widget_order = [ "lockscreen-login-box@winit", "lockscreen-login-box@DVI-I-1", "
         show_unlock_hint = true
         show_weather = true
 
+    [lockscreen_widgets.widget.lockscreen-widget-0000000000000001]
+    box_height = 152.0
+    box_width = 240.0
+    cx = 160.0
+    cy = 120.0
+    output = "eDP-1"
+    placement_height = 1080.0
+    placement_width = 1920.0
+    rotation = 0.0
+    type = "sysmon"
+
+        [lockscreen_widgets.widget.lockscreen-widget-0000000000000001.settings]
+        show_label = true
+        stat = "cpu_usage"
+        stat2 = "ram_pct"
+
+    [lockscreen_widgets.widget.lockscreen-widget-0000000000000002]
+    box_height = 176.0
+    box_width = 336.0
+    cx = 960.0
+    cy = 308.0
+    output = "eDP-1"
+    placement_height = 1080.0
+    placement_width = 1920.0
+    rotation = 0.0
+    type = "clock"
+
+    [lockscreen_widgets.widget.lockscreen-widget-0000000000000003]
+    box_height = 624.0
+    box_width = 656.0
+    cx = 960.0
+    cy = 572.0
+    output = "eDP-1"
+    placement_height = 1080.0
+    placement_width = 1920.0
+    rotation = 0.0
+    type = "fancy_audio_visualizer"
+
+        [lockscreen_widgets.widget.lockscreen-widget-0000000000000003.settings]
+        background = false
+
 [osd]
 position = "top_right"
 
@@ -192,20 +246,20 @@ source = "wallpaper"
 wallpaper_scheme = "m3-content"
 
     [theme.templates]
-    builtin_ids = [ "kcolorscheme", "kitty" ]
+    builtin_ids = [ "kcolorscheme" ]
 
 [wallpaper]
 directory = "/home/anish/Pictures/Wallpapers"
 transition_on_startup = true
 
     [wallpaper.default]
-    path = "/home/anish/Pictures/Wallpapers/pexels-kaboompics-6406.jpg"
+    path = "/home/anish/Pictures/Wallpapers/arch.png"
 
     [wallpaper.last]
-    path = "/home/anish/Pictures/Wallpapers/pexels-kaboompics-6406.jpg"
+    path = "/home/anish/Pictures/Wallpapers/arch.png"
 
     [wallpaper.monitors.eDP-1]
-    path = "/home/anish/Pictures/Wallpapers/pexels-kaboompics-6406.jpg"
+    path = "/home/anish/Pictures/Wallpapers/arch.png"
 
 [widget.battery]
 hide_when_full = true
