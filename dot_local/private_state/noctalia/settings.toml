@@ -10,17 +10,27 @@ capsule = true
 capsule_thickness = 0.79999998584389687
 center = [ "taskbar" ]
 concave_edge_corners = false
-end = [ "tray", "media", "notifications", "network", "volume", "battery", "control-center" ]
+end = [ "tray", "media", "notifications", "network", "input_volume", "volume", "battery", "control-center" ]
 font_weight = 400
 margin_edge = 4
 margin_ends = 200
 radius = 20
 shadow = false
-start = [ "launcher", "clock", "cpu", "ram" ]
+start = [ "launcher", "clock", "group:g1" ]
 thickness = 35
 
     [bar.default.monitor.DVI-I-1]
     enabled = false
+
+    [[bar.default.capsule_group]]
+    accordion = false
+    accordion_direction = "end"
+    enabled = true
+    fill = "surface_variant"
+    id = "g1"
+    members = [ "cpu", "ram", "sysmon" ]
+    opacity = 1.0
+    padding = 6.0
 
 [control_center]
 sidebar = "full"
@@ -253,13 +263,13 @@ directory = "/home/anish/Pictures/Wallpapers"
 transition_on_startup = true
 
     [wallpaper.default]
-    path = "/home/anish/Pictures/Wallpapers/arch.png"
+    path = "/home/anish/Pictures/Wallpapers/wallhaven-8gg5v2.png"
 
     [wallpaper.last]
-    path = "/home/anish/Pictures/Wallpapers/arch.png"
+    path = "/home/anish/Pictures/Wallpapers/wallhaven-8gg5v2.png"
 
     [wallpaper.monitors.eDP-1]
-    path = "/home/anish/Pictures/Wallpapers/arch.png"
+    path = "/home/anish/Pictures/Wallpapers/wallhaven-8gg5v2.png"
 
 [widget.battery]
 hide_when_full = true
@@ -276,6 +286,9 @@ show_label = false
 
 [widget.notifications]
 hide_when_no_unread = true
+
+[widget.sysmon]
+stat = "disk_used"
 
 [widget.taskbar]
 anchor = true
