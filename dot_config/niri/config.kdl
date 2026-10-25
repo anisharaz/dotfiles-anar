@@ -99,7 +99,3 @@ environment {
     // Remove a variable by using null as the value: 
     // DISPLAY null
 }
-
-
-// MoreSpace runtime display and tablet mapping.
-include "config.d/90-morespace.kdl"
